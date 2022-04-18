@@ -1,33 +1,33 @@
 {
   "question": [
     {
-      "q": "What is 2 + 2 ?",
-      "a": [4, 8, 2, 9],
-      "correct": 4
+      "q": "What is the name of the programming language used to design the front end of web applications?",
+      "a": ["PHP", "JAVASCRIPT", "C++", "Python"],
+      "correct": "JAVASCRIPT"
     },
     {
-      "q": "4 + 6 ?",
-      "a": [20, 10, 15, 8],
-      "correct": 10
+      "q": "What is the name of the programming language used to develop backends for web applications?",
+      "a": ["JavaScript", "PHP", "C++", "CSS"],
+      "correct": "PHP"
     },
     {
-      "q": "9 + 2 ?",
-      "a": [3, 11, 30, 5],
-      "correct": 11
+      "q": "Language used in the development of Android applications?",
+      "a": ["C#", "Kotlin", "HTML", "XML"],
+      "correct": "Kotlin"
     },
     {
-      "q": "1 + 1 ?",
-      "a": [2, 4, 6, 8],
-      "correct": 2
+      "q": "A language developed by Microsoft?",
+      "a": ["Java", "JavaScript", "C#", "Python"],
+      "correct": "C#"
     },
     {
-      "q": "5 * 5",
-      "a": [25, 20, 30, 10],
-      "correct": 25
+      "q": "A JavaScript runtime ?",
+      "a": ["PHP", "HTML", "JAVA","Node js" ],
+      "correct": "Node js"
     },
     {
-      "q": "10 / 2",
-      "a": [3, 5, 7, 10],
-      "correct": 5
+      "q": "an open-source JavaScript framework, designed for building apps on multiple platforms like iOS, Android, and also web applications ?",
+      "a": ["C#", "React Native", "Django", "laravel"],
+      "correct": "React Native"
     }]
 }
