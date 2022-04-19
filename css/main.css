@@ -113,10 +113,10 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  background: #ECB365;
+  background: darkcyan;
   height: 100%;
-  width: 10%;
-  transition: .3s;
+  width: 0;
+  transition: all .5s;
 }
 
 .progress::after {
@@ -143,6 +143,7 @@ input {
   height: 0;
   width: 0;
 }
+
 label {
   display: inline-block;
   width: 100%;
@@ -175,8 +176,9 @@ input:checked~label::after {
   transform: translateY(-50%) scale(1);
   background: #ECB365;
 }
-label:hover::after{
+
+label:hover::after {
   background: #ECB365;
-    transform: translateY(-50%) scale(.4);
+  transform: translateY(-50%) scale(.4);
 
 }

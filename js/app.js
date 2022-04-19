@@ -7,21 +7,16 @@ request.onreadystatechange = function() {
 
     query('.progress').dataset.q = data.length
     render(data[count], data.length);
-
     query('.submit').onclick = () => {
       if (count < data.length) {
-        let correct = '' + data[count].correct;
-
+        let correct = data[count].correct.toString();
         count++;
         check(correct, data.length);
-
         query('.area').textContent = '';
         query('.answers').textContent = '';
-
         render(data[count], data.length);
       }
     }
-    // console.log(data);
   }
 }
 request.open('GET', 'js/data.json', true);
@@ -50,7 +45,6 @@ function render(data, total) {
       let s = data.a.splice(index, 1)
       input.dataset.answer = s;
       label.appendChild(document.createTextNode(s));
-      console.log(s);
       answer.appendChild(input);
       answer.appendChild(label);
       query('.answers').appendChild(answer);
@@ -74,7 +68,6 @@ function check(right, total) {
     let r = document.createElement('h2');
     r.textContent = `Your have a ${right_answrs} from ${total}`;
     setTimeout(() => query('.area').appendChild(r), 100);
-    console.log(right_answrs)
   }
 
 }
