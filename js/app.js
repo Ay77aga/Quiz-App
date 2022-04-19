@@ -4,23 +4,27 @@ const request = new XMLHttpRequest();
 request.onreadystatechange = function() {
   if (this.readyState === 4 && this.status === 200) {
     const data = JSON.parse(request.responseText).question;
+
     query('.progress').dataset.q = data.length
     render(data[count], data.length);
 
     query('.submit').onclick = () => {
       if (count < data.length) {
         let correct = '' + data[count].correct;
+
         count++;
         check(correct, data.length);
+
         query('.area').textContent = '';
         query('.answers').textContent = '';
+
         render(data[count], data.length);
       }
     }
     // console.log(data);
   }
 }
-request.open('GET', 'js/data.json');
+request.open('GET', 'js/data.json', true);
 request.send();
 
 function query(element) { return document.querySelector(element) }
@@ -40,12 +44,17 @@ function render(data, total) {
       input.type = 'radio';
       input.name = 'answer';
       input.id = `answer_${i}`;
-      input.dataset.answer = data.a[i - 1];
-      label.appendChild(document.createTextNode(data.a[i - 1]));
+      // randomly answers 
+      let r = Math.floor(Math.random() * data.a.length);
+      let index = data.a.indexOf(data.a[r]);
+      let s = data.a.splice(index, 1)
+      input.dataset.answer = s;
+      label.appendChild(document.createTextNode(s));
+      console.log(s);
       answer.appendChild(input);
       answer.appendChild(label);
       query('.answers').appendChild(answer);
-      if (i == 1) input.checked = true;
+      // if (i == 1) input.checked = true;
     }
   }
 }

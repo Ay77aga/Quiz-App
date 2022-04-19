@@ -67,14 +67,6 @@ body {
   margin: auto;
 }
 
-label {
-  display: inline-block;
-  width: 90%;
-  font-size: 20px;
-  color: #fff;
-  padding-left: 25px;
-  padding: 10px;
-}
 
 .answers div {
   margin: 20px auto;
@@ -143,4 +135,48 @@ label {
   right: 0;
   color: #041C32;
   font-weight: bold;
+}
+
+
+/* Custom input */
+input {
+  height: 0;
+  width: 0;
+}
+label {
+  display: inline-block;
+  width: 100%;
+  font-size: 20px;
+  color: #fff;
+  padding: 10px;
+  padding-left: 40px;
+  position: relative;
+}
+
+label::before,
+label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  background: #6C7FEF;
+}
+
+label::after {
+  transition: all .5s;
+  transform: translateY(-50%) scale(0);
+}
+
+input:checked~label::after {
+  transform: translateY(-50%) scale(1);
+  background: #ECB365;
+}
+label:hover::after{
+  background: #ECB365;
+    transform: translateY(-50%) scale(.4);
+
 }

@@ -22,12 +22,24 @@
     },
     {
       "q": "A JavaScript runtime ?",
-      "a": ["PHP", "HTML", "JAVA","Node js" ],
+      "a": ["PHP", "HTML", "JAVA", "Node js"],
       "correct": "Node js"
     },
     {
       "q": "an open-source JavaScript framework, designed for building apps on multiple platforms like iOS, Android, and also web applications ?",
       "a": ["C#", "React Native", "Django", "laravel"],
       "correct": "React Native"
-    }]
+    },
+    {
+      "q": "What the meaning ' JavaScript object notation ' ?",
+      "a": ["JSON", "XML", "HTML", "PHP"],
+      "correct": "JSON"
+    },
+    {
+      "q": "Arrow function ?",
+      "a": ["<=()","()>>","()=>","<<()"],
+      "correct": "()=>"
+    }
+    
+    ]
 }
