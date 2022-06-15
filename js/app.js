@@ -26,30 +26,22 @@ function query(element) { return document.querySelector(element) }
 
 function render(data, total) {
   if (count < total) {
-    query('.progress span').dataset.current = count + 1;
+    query('.progress span').dataset.current = `Q${count +1}`;
     let q = document.createElement('h2');
     q.appendChild(document.createTextNode(data.q))
     query('.area').appendChild(q);
     for (let i = 1; i <= 4; i++) {
       let answer = document.createElement('div');
-      answer.className = `answer_${i}`;
-      let label = document.createElement('label');
-      label.htmlFor = `answer_${i}`;
-      let input = document.createElement('input');
-      input.type = 'radio';
-      input.name = 'answer';
-      input.id = `answer_${i}`;
-      // randomly answers 
       let r = Math.floor(Math.random() * data.a.length);
       let index = data.a.indexOf(data.a[r]);
-      let s = data.a.splice(index, 1)
-      input.dataset.answer = s;
-      label.appendChild(document.createTextNode(s));
-      answer.appendChild(input);
-      answer.appendChild(label);
+      let s = data.a.splice(index, 1);
+      answer.className = `answer_${i}`;
+      answer.innerHTML = `
+        <input type="radio" name="answer" id="answer_${i}" data-answer="${s}">
+        <label for="answer_${i}">${s}</label>`;
       query('.answers').appendChild(answer);
-      // if (i == 1) input.checked = true;
     }
+
   }
 }
 

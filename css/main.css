@@ -32,19 +32,25 @@ html {
   user-select: none;
 }
 
+:root {
+  --main: hsl(193, 38%, 86%);
+  --bg: hsl(217, 19%, 24%);
+  --sc: #0b5ed7;
+}
+
 header p {
   font-size: 2em;
   font-weight: bold;
   padding: 10px;
   text-align: center;
-  background: #041C32;
-  color: #ECB365;
+  background: var(--bg);
+  color: var(--main);
 }
 
 section {
-  padding: 15px;
+  padding: 5px;
   height: calc(100vh - 55px);
-  background: #04293A;
+  background: hsl(218, 23%, 16%);
 }
 
 .container {
@@ -56,21 +62,32 @@ body {
 }
 
 .area h2 {
-  color: #ECB365;
+  color: var(--main);
   width: 100%;
+  margin: 10px auto;
   text-align: center;
   padding: 1em 10px;
+  background: var(--bg);
+  border-radius: 2rem;
+  border: 2px solid var(--sc)
 }
 
 .answers {
-  width: 90%;
+  width: 340px;
   margin: auto;
+  border-radius: 1rem;
+  background: var(--bg);
+  padding: 5px;
 }
 
 
 .answers div {
-  margin: 20px auto;
-  border-bottom: 1px solid #fff;
+  margin: 10px auto;
+  border: 1px solid var(--main);
+  display: flex;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 5px;
 }
 
 .submit {
@@ -81,9 +98,9 @@ body {
   margin: auto;
   padding: 10px 15px;
   border-radius: 2rem;
-  color: #ECB365;
+  color: #fff;
   font-weight: bold;
-  background: #041c32;
+  background: var(--sc);
   border: 1px solid #fff;
 }
 
@@ -98,7 +115,7 @@ body {
 
 .count span {
   font-size: 2em;
-  color: #ECB365;
+  color: var(--sc);
   font-weight: bold;
 
 }
@@ -107,13 +124,16 @@ body {
   border: 1px solid #fff;
   height: 20px;
   position: relative;
+  color: #fff;
+  border-radius: 2rem;
+  overflow: hidden;
 }
 
 .progress span {
   position: absolute;
   left: 0;
   top: 0;
-  background: darkcyan;
+  background: var(--sc);
   height: 100%;
   width: 0;
   transition: all .5s;
@@ -125,16 +145,15 @@ body {
   right: 0;
   top: 0;
   transform: translateY(-100%);
-  color: #fff;
-
 }
 
 .progress span::after {
   content: attr(data-current);
   position: absolute;
-  right: 0;
-  color: #041C32;
+  left: 50%;
+  transform: translateX(-50%);
   font-weight: bold;
+
 }
 
 
@@ -164,7 +183,7 @@ label::after {
   height: 26px;
   width: 26px;
   border-radius: 50%;
-  background: #6C7FEF;
+  background: #fff;
 }
 
 label::after {
@@ -174,11 +193,16 @@ label::after {
 
 input:checked~label::after {
   transform: translateY(-50%) scale(1);
-  background: #ECB365;
+  background: var(--sc);
+}
+
+input:checked~label {
+  color: lime;
+  font-weight: bold;
 }
 
 label:hover::after {
-  background: #ECB365;
+  background: var(--sc);
   transform: translateY(-50%) scale(.4);
 
 }
